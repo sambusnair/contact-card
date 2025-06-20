@@ -21,6 +21,41 @@
     align-items: center;
     gap: 10px;
     padding: 10px 0;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin-top: 60px;
+    padding: 20px;
+    width: 95%;
+    max-width: 380px;
+  }
+  .card img.profile {
+    width: 140px;
+    height: 140px;
+  }
+  .card h1 {
+    font-size: 22px;
+  }
+  .card p.title {
+    font-size: 16px;
+  }
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card a {
+    width: 80%;
+    text-align: center;
+  }
+  .card img.qr {
+    width: 110px;
+  }
+}
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
   }
   .card {
     margin-top: 80px;
@@ -29,9 +64,12 @@
     max-width: 360px;
   }
   .card img.profile {
-    width: 100px;
-    height: 100px;
-  }
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
   .card h1 {
     font-size: 20px;
   }
@@ -207,6 +245,7 @@
     <a onclick="showPopup('About Me')">About Me</a>
     <a href="Sambu_Nair_Resume_v4.pdf" target="_blank">My Resume</a>
     <a onclick="showPopup('My Blog')">My Blog</a>
+    <a onclick="showPopup('My Certifications')">My Certifications</a>
   </nav>
   <div class="popup" id="popup">
     <h2></h2>
