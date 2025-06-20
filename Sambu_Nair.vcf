@@ -1,9 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
 FN:Sambu S Nair
-TITLE:Service Delivery / Project Manager
-TEL;TYPE=cell:+91-9036347197
-EMAIL:your.email@example.com
+ORG:Service Delivery / Project Manager
+TEL;TYPE=CELL:+91-9036347197
+EMAIL:sambusnair@email.com
 URL:https://www.linkedin.com/in/sambusnair/
-PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD... (base64 of sambu.jpg)
+PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQEAAAAAAAD...<very long base64 string>
 END:VCARD
