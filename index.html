@@ -25,6 +25,32 @@
       background-size: cover;
       position: relative;
     }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
     .popup {
       display: none;
       position: fixed;
@@ -60,7 +86,7 @@
       width: 90%;
       position: relative;
       z-index: 1;
-      margin-top: 100px;
+      margin-top: 120px;
     }
     .card img.profile {
       width: 140px;
@@ -142,7 +168,7 @@
     function showPopup(title) {
       const popup = document.getElementById("popup");
       popup.querySelector("h2").innerText = title;
-      popup.querySelector("p").innerText = "Oops... Under Construction (I have not learned how to make this yet!) 🚧";
+      popup.querySelector("p").innerText = "Oops... Under Construction 🚧";
       popup.style.display = "block";
     }
     function closePopup() {
@@ -151,6 +177,11 @@
   </script>
 </head>
 <body>
+  <nav>
+    <a onclick="showPopup('About Me')">About Me</a>
+    <a onclick="showPopup('My Resume')">My Resume</a>
+    <a onclick="showPopup('My Blog')">My Blog</a>
+  </nav>
   <div class="popup" id="popup">
     <h2></h2>
     <p></p>
