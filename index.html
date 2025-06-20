@@ -25,29 +25,6 @@
       background-size: cover;
       position: relative;
     }
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px 0;
-      z-index: 2;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-radius: 4px;
-      transition: background 0.3s;
-      cursor: pointer;
-    }
-    nav a:hover {
-      background: #ffffff33;
-    }
     .popup {
       display: none;
       position: fixed;
@@ -165,6 +142,7 @@
     function showPopup(title) {
       const popup = document.getElementById("popup");
       popup.querySelector("h2").innerText = title;
+      popup.querySelector("p").innerText = "Oops... Under Construction (I have not learned how to make this yet!) 🚧";
       popup.style.display = "block";
     }
     function closePopup() {
@@ -173,14 +151,9 @@
   </script>
 </head>
 <body>
-  <nav>
-    <a onclick="showPopup('About Me')">About Me</a>
-    <a onclick="showPopup('My Resume')">My Resume</a>
-    <a onclick="showPopup('My Blog')">My Blog</a>
-  </nav>
   <div class="popup" id="popup">
     <h2></h2>
-    <p>Oops... Under Construction 🚧</p>
+    <p></p>
     <button onclick="closePopup()">Close</button>
   </div>
   <div class="card">
