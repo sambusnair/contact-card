@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sambu S Nair - Digital Contact Card</title>
   <style>
     html, body {
@@ -39,15 +39,16 @@
       background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 20px 0;
+      gap: 15px;
+      padding: 15px 0;
       z-index: 1000;
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 20px;
+      padding: 8px 12px;
+      font-size: 14px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.1);
       transition: background 0.3s, transform 0.3s;
@@ -95,8 +96,8 @@
       margin-top: 120px;
     }
     .card img.profile {
-      width: 140px;
-      height: 140px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
@@ -177,8 +178,20 @@
       popup.querySelector("p").innerText = "Oops... Under Construction 🚧";
       popup.style.display = "block";
     }
+
     function closePopup() {
       document.getElementById("popup").style.display = "none";
+    }
+
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('autodownload') === 'true' && isMobile()) {
+        window.location.href = 'Sambu_Nair.vcf';
+      }
     }
   </script>
 </head>
@@ -188,11 +201,13 @@
     <a onclick="showPopup('My Resume')">My Resume</a>
     <a onclick="showPopup('My Blog')">My Blog</a>
   </nav>
+
   <div class="popup" id="popup">
     <h2></h2>
     <p></p>
     <button onclick="closePopup()">Close</button>
   </div>
+
   <div class="card">
     <img src="sambu.jpg" alt="Sambu S Nair" class="profile">
     <h1>Sambu S Nair</h1>
