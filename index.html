@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sambu S Nair - Digital Contact Card</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+    body {
+      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       background: url('1.png') no-repeat center center fixed;
       background-size: cover;
+      position: relative;
     }
     body::before {
       content: "";
@@ -24,13 +27,13 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
-      z-index: -1;
+      z-index: 0;
     }
     .card {
       background: #fff;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       text-align: center;
       max-width: 400px;
       width: 90%;
@@ -50,7 +53,7 @@
     }
     .card p.title {
       margin: 0 0 20px;
-      color: #777;
+      color: #555;
       font-size: 16px;
     }
     .links {
@@ -58,6 +61,7 @@
       justify-content: center;
       gap: 10px;
       margin-top: 15px;
+      flex-wrap: wrap;
     }
     .card a {
       text-decoration: none;
@@ -65,10 +69,40 @@
       padding: 10px 15px;
       border-radius: 6px;
       font-weight: bold;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
     }
-    .card a.whatsapp { background: #25D366; }
-    .card a.linkedin { background: #0073b1; }
-    .card a.instagram { background: #C13584; }
+    .card a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 6px;
+    }
+    .card a:hover::after {
+      opacity: 1;
+    }
+    .card a:active {
+      transform: scale(0.95);
+    }
+    .card a.whatsapp {
+      background: #25D366;
+      border-color: #1ebe5d;
+    }
+    .card a.linkedin {
+      background: #0073b1;
+      border-color: #005582;
+    }
+    .card a.instagram {
+      background: #C13584;
+      border-color: #a12d6c;
+    }
     .card img.qr {
       margin-top: 25px;
       width: 130px;
@@ -86,7 +120,7 @@
       <a href="https://www.linkedin.com/in/sambusnair/" class="linkedin" target="_blank">LinkedIn</a>
       <a href="https://www.instagram.com/sam.satheesh/" class="instagram" target="_blank">Instagram</a>
     </div>
-    <img src="qr.png" alt="Scan QR to save contact" class="qr">
+    <img src="Sambu_Contact_vCard_QR.png" alt="Scan to save contact" class="qr">
   </div>
 </body>
 </html>
