@@ -21,9 +21,15 @@
       background-image: url('SN1.png');
       background-repeat: no-repeat;
       background-position: center center;
-      background-attachment: fixed;
-      background-size: cover;
+      background-attachment: scroll;
+      background-size: contain;
       position: relative;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-size: contain;
+        background-position: top center;
+      }
     }
     nav {
       position: fixed;
@@ -89,8 +95,8 @@
       margin-top: 120px;
     }
     .card img.profile {
-      width: 140px;
-      height: 140px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
@@ -181,6 +187,7 @@
     <a onclick="showPopup('About Me')">About Me</a>
     <a onclick="showPopup('My Resume')">My Resume</a>
     <a onclick="showPopup('My Blog')">My Blog</a>
+    <a onclick="showPopup('My Certifications')">My Certifications</a>
   </nav>
   <div class="popup" id="popup">
     <h2></h2>
