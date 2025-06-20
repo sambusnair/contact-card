@@ -8,51 +8,66 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100vh;
       width: 100%;
     }
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       background-color: #d9d9d9;
       background-image: url('SN1.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: scroll;
-      background-size: contain;
-      position: relative;
+      background-size: cover;
     }
     @media (max-width: 768px) {
-      body {
-        background-size: contain;
-        background-position: top center;
-      }
+  body {
+    background-position: top center;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .card {
+    margin: 120px auto 40px;
+    padding: 20px;
+    width: 95%;
+  }
+  .card img.profile {
+    width: 180px;
+    height: 180px;
+  }
+  .card h1 {
+    font-size: 22px;
+  }
+  .card p.title {
+    font-size: 16px;
+  }
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
     }
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px 0;
-      z-index: 1000;
-    }
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  z-index: 1000;
+}
     nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.1);
-      transition: background 0.3s, transform 0.3s;
-      cursor: pointer;
-    }
+      font-weight: bold;$1
+      font-size: 12px;
     nav a:hover {
       background: rgba(255, 255, 255, 0.3);
       transform: scale(1.05);
@@ -90,26 +105,24 @@
       text-align: center;
       max-width: 400px;
       width: 90%;
-      position: relative;
-      z-index: 1;
-      margin-top: 120px;
+      margin: 160px auto 60px;
     }
     .card img.profile {
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
     }
     .card h1 {
       margin: 10px 0 5px;
-      font-size: 24px;
+      font-size: 26px;
       color: #000;
     }
     .card p.title {
       margin: 0 0 20px;
       color: #333;
-      font-size: 16px;
+      font-size: 18px;
     }
     .links {
       display: flex;
@@ -188,6 +201,7 @@
     <a onclick="showPopup('My Resume')">My Resume</a>
     <a onclick="showPopup('My Blog')">My Blog</a>
     <a onclick="showPopup('My Certifications')">My Certifications</a>
+    <a href="Sambu_Nair.vcf" download style="font-size: 12px; background: #444; border-radius: 6px; color: white; padding: 10px 15px; text-decoration: none;">📥 Download Contact</a>
   </nav>
   <div class="popup" id="popup">
     <h2></h2>
