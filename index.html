@@ -14,28 +14,76 @@
     body {
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #d9d9d9;
-      background-image: url('SN.png');
+      background-image: url('SN1.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: fixed;
       background-size: cover;
       position: relative;
     }
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      z-index: 2;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #ffffff33;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
     .card {
       background: transparent;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
       padding: 30px;
-      border-radius: 0;
-      box-shadow: none;
       text-align: center;
       max-width: 400px;
       width: 90%;
       position: relative;
       z-index: 1;
+      margin-top: 100px;
     }
     .card img.profile {
       width: 140px;
@@ -113,8 +161,28 @@
       border-color: #555;
     }
   </style>
+  <script>
+    function showPopup(title) {
+      const popup = document.getElementById("popup");
+      popup.querySelector("h2").innerText = title;
+      popup.style.display = "block";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
 </head>
 <body>
+  <nav>
+    <a onclick="showPopup('About Me')">About Me</a>
+    <a onclick="showPopup('My Resume')">My Resume</a>
+    <a onclick="showPopup('My Blog')">My Blog</a>
+  </nav>
+  <div class="popup" id="popup">
+    <h2></h2>
+    <p>Oops... Under Construction 🚧</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
   <div class="card">
     <img src="sambu.jpg" alt="Sambu S Nair" class="profile">
     <h1>Sambu S Nair</h1>
