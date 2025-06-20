@@ -166,7 +166,6 @@
       border-color: #555;
     }
 
-    /* Contact prompt box (mobile only) */
     #downloadPrompt {
       display: none;
       position: fixed;
@@ -218,8 +217,8 @@
 
     function downloadVCF() {
       const a = document.createElement('a');
-      a.href = 'Sambu_Nair.vcf';
-      a.download = 'Sambu_Nair.vcf';
+      a.href = 'Sambu_Nair_Corrected.vcf';
+      a.download = 'Sambu_Nair_Corrected.vcf';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -269,7 +268,7 @@
     </div>
     <img src="QR2.png" alt="Scan to save contact" class="qr">
     <div>
-      <a href="Sambu_Nair.vcf" class="vcf-download" download>📥 Download Contact</a>
+      <a href="Sambu_Nair_Corrected.vcf" class="vcf-download" download>📥 Download Contact</a>
     </div>
   </div>
 </body>
